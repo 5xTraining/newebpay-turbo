@@ -47,7 +47,7 @@ config.loginType = 0
 
 ## 傳送參數
 
-```
+```ruby
 # controllers
 payment = Newebpay::Payment.new(
           order_number: YOUR_ORDER_NUMBER (required),
@@ -74,7 +74,7 @@ payment = Newebpay::Payment.new(
 
 若是有加入 `ReturnURL` 或是 `NotifyURL` 的使用者，會接受到藍新傳送回來的付款資訊 ( 無論成功與否 )
 
-```
+```ruby
 response = Newebpay::Response.new(params[:TradeInfo])
 
 response.result # 付款的詳細資訊

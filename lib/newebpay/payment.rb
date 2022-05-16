@@ -10,6 +10,10 @@ module Newebpay
     attr_accessor :trade_info
 
     def initialize(order_number: nil, amount: nil, product_description: '產品說明', email: '', order_comment: '')
+      unless options[:MerchantID] && options[:HashKey] && options[:HashIV] && options[:Version] && options[:LoginType] && options[:RespondType]
+        raise Newebpay::ConfigError, "Confirm that all required parameters in 'config/initializers/newebpay.rb' are filled in"
+      end
+
       unless order_number && amount
         raise Newebpay::PaymentArgumentError, 'Please make sure that your arguments (order_number, amount) are filled in correctly'
       end

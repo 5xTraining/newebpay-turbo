@@ -53,10 +53,6 @@ module Newebpay
 
     def configure
       yield self
-
-      unless options[:MerchantID] && options[:HashKey] && options[:HashIV] && options[:Version] && options[:LoginType] && options[:RespondType]
-        raise Newebpay::ConfigError, "Confirm that all required parameters in 'config/initializers/newebpay.rb' are filled in"
-      end
     end
   end
 end

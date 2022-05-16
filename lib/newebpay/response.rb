@@ -11,7 +11,7 @@ module Newebpay
                 :paid_at
 
     def initialize(data)
-      response = AES::Cryptographic.new(data).decrypt
+      response = AES::Cryptographic.new(data['TradeInfo']).decrypt
 
       @status = response['Status']
       @message = response['Message']

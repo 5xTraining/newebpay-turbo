@@ -75,11 +75,25 @@ payment = Newebpay::Payment.new(
 若是有加入 `ReturnURL` 或是 `NotifyURL` 的使用者，會接受到藍新傳送回來的付款資訊 ( 無論成功與否 )
 
 ```ruby
-response = Newebpay::Response.new(params[:TradeInfo])
+response = Newebpay::Response.new(params)
 
 response.result # 付款的詳細資訊
 response.success? # 確認付款是否成功
 response.message # 交易資訊的訊息
+response.order_number # 您送出的訂單編號
+response.trade_number # 與藍新方的交易編號
+response.ip # 付款者的 ip 位置
+response.card_number_first_six_code # 付款者的信用卡前六碼
+response.card_number_last_four_code # 付款者的信用卡後四碼
+response.escrow_bank # 款項的託管銀行
+response.auth_bank # 交易的授權銀行
+response.pay_way # 付款者的交易方式 ( 信用卡, ATM ... )
+response.inst # 0 為無分期, 1 為有分期
+response.inst_first_price # 信用卡分期第一期繳費金額
+response.inst_each_price # 信用卡分期每期繳費金額
+response.atm_pay_bank_code # ATM 繳費的銀行代碼
+response.atm_payer_account_last_five_code # ATM 付款者的帳號後五碼
+response.paid_at # 繳費時間
 ```
 
 # Bug or PR

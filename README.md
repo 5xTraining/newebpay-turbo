@@ -19,7 +19,7 @@ Online payment processing for internet businesses by newebpay from Taiwan
 
 目前這個 Gem 只在 Rails 專案內支援，故安裝方式請放在 `Gemfile` 內
 
-`gem 'newebpay-turbo', '~> 0.2.3'`
+`gem 'newebpay-turbo', '~> 0.2.4'`
 
 `bundle install`
 

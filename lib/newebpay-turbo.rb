@@ -3,6 +3,7 @@
 require 'newebpay/config'
 require 'newebpay/version'
 require 'newebpay/payment'
+require 'newebpay/refund'
 require 'newebpay/response'
 require 'newebpay/errors'
 

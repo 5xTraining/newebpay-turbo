@@ -36,18 +36,15 @@ module Newebpay
     end
 
     def set_trade_info
-      options = Config.options.except(:HashKey, :HashIV, :Version, :LoginType)
-      @trade_info = Hash[options.map {|key, value| [key, value]}]
-
-      individual_trade_info = {
+      @trade_info = {
+        RespondType: 'JSON',
+        Version: '1.1',
         MerchantOrderNo: @order_number,
         Amt: @amount.to_i,
         TimeStamp: Time.now.to_i.to_s,
         IndexType: 1,
-        CloseType: 2
+        CloseType: 2 
       }
-
-      @trade_info.merge!(individual_trade_info)
     end
   end
 end

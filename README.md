@@ -5,9 +5,10 @@ Online payment processing for internet businesses by newebpay from Taiwan
 - [環境需求](#環境需求)
 - [安裝方式](#安裝方式)
 - [基礎設定](#基礎設定)
-- [使用方始](#使用方式)
+- [使用方式](#使用方式)
   - [傳送參數](#傳送參數)
   - [接受參數](#接受參數)
+- [退費使用方式](#退費使用方式)
 - [Bug or PR](#bug-or-pr)
 - [License](#license)
 
@@ -59,7 +60,7 @@ payment = Newebpay::Payment.new(
 @form_info = payment.required_parameters # { MERCHANT_ID:..., TradeInfo: ..., TradeSha: ..., Version: '2.0' }
 
 # views
-<%= form.with url: NEWEBPAY_MPG_URL, method: :post do |form| >
+<%= form_with url: NEWEBPAY_MPG_URL, method: :post do |form| >
   <% @form_info.each do |key, value|>
     <%= form.hidden_field key, { value: value } >
   <% end %>
@@ -94,6 +95,23 @@ response.inst_each_price # 信用卡分期每期繳費金額
 response.atm_pay_bank_code # ATM 繳費的銀行代碼
 response.atm_payer_account_last_five_code # ATM 付款者的帳號後五碼
 response.paid_at # 繳費時間
+```
+
+# 退費使用方式
+
+```ruby
+refund = Newebpay::Refund.new(
+         order_number: YOUR_ORDER_NUMBER (required),
+         amount: YOUR_ORDER_AMOUNT (required))
+
+@form_info = refund.required_parameters # { MERCHANT_ID:..., TradeInfo: ..., TradeSha: ..., Version: '1.1' }
+
+# views
+<%= form_with url: NEWEBPAY_MPG_REFUND_URL, method: :post do |form| >
+  <% @form_info.each do |key, value|>
+    <%= form.hidden_field key, { value: value } >
+  <% end %>
+<% end %>
 ```
 
 # Bug or PR

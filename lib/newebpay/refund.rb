@@ -4,8 +4,6 @@ require_relative 'config'
 require_relative 'errors'
 require_relative './AES/cryptographic'
 require_relative './SHA256/cryptographic'
-require 'net/http'
-require 'json'
 
 module Newebpay
   class Refund

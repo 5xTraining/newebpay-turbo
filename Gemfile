@@ -10,4 +10,8 @@ group :development do
   gem "rake", "~> 13.0"
   gem "rspec", "~> 3.0"
   gem 'rubocop', '~> 1.29'
+  gem 'timecop', '~> 0.9.5'
+  gem 'vcr', '~> 6.1'
+  gem 'webmock', '~> 3.14'
+  gem 'dotenv', '~> 2.7', '>= 2.7.6'
 end

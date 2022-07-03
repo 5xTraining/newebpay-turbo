@@ -42,7 +42,7 @@ module Newebpay
 
     def set_trade_info
       options = Config.options.except(:HashKey, :HashIV)
-      @trade_info = Hash[options.map {|key, value| [key, value]}]
+      @trade_info = Hash[options.map {|key, value| [key.to_sym, value]}]
 
       individual_trade_info = {
         MerchantOrderNo: @order_number,

@@ -29,8 +29,7 @@ module Newebpay
         decipher.key = @key
         decipher.iv = @iv
         data = decipher.update(encrypted_data) + decipher.final
-        raw_data = strip_padding(data)
-        JSON.parse(raw_data)
+        strip_padding(data)
       end
 
       def encode(data)

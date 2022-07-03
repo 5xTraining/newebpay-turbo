@@ -100,13 +100,14 @@ response.paid_at # 繳費時間
 # 退費使用方式
 
 ```ruby
-response = Newebpay::Refund.new(
+refunder = Newebpay::Refund.new(
          order_number: YOUR_ORDER_NUMBER (required),
          amount: YOUR_ORDER_AMOUNT (required),
-         cancel: false ( 預設是 false, 如果填入 true 代表要取消退款)).request!
+         cancel: false ( 預設是 false, 如果填入 true 代表要取消退款))
 
-@response.success? # 確認退款的狀態
-print @response # 看看回傳的結果
+refunder.request! # 申請退款，若是帶入 cancel: true 則為取消退款
+refunder.response # 查看回傳結果
+refunder.success? # 請求是否成功
 ```
 
 # Bug or PR

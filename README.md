@@ -99,12 +99,14 @@ response.paid_at # 繳費時間
 
 # 退費使用方式
 
+務必在設定檔也填入關於退費的 `refundReturnURL` 以及 `refundNotifyURL` ( 使用方法與付款無異，端看是否在同一個 endpoint 區分付款以及退費 )
+
 ```ruby
 refund = Newebpay::Refund.new(
          order_number: YOUR_ORDER_NUMBER (required),
          amount: YOUR_ORDER_AMOUNT (required))
 
-@form_info = refund.required_parameters # { MERCHANT_ID:..., TradeInfo: ..., TradeSha: ..., Version: '1.1' }
+@form_info = refund.required_parameters # { MERCHANT_ID_:..., POST_DATA_:... }
 
 # views
 <%= form_with url: NEWEBPAY_MPG_REFUND_URL, method: :post do |form| >

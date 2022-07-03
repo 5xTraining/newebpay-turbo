@@ -43,7 +43,9 @@ module Newebpay
         Amt: @amount.to_i,
         TimeStamp: Time.now.to_i.to_s,
         IndexType: 1,
-        CloseType: 2 
+        CloseType: 2,
+        NotifyURL: Config.options[:RefundNotifyURL],
+        ReturnURL: Config.options[:RefundReturnURL]
       }
     end
   end

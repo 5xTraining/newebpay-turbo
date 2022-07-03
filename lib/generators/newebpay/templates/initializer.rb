@@ -37,12 +37,6 @@ Newebpay.configure do |config|
 
   # The URL ending payment information by asynchronous, method: :post
   # config.notifyURL = ''
-
-  # The URL returned when refund is completed, method: :post
-  # config.refundReturnURL = ''
-
-  # The URL ending refund information by asynchronous, method: :post
-  # config.refundNotifyURL = ''
   
   # The URL of the numbering system, method: :post
   # config.customerURL = ''

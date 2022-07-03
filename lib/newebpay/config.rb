@@ -15,8 +15,6 @@ module Newebpay
       'ExpireDate',
       'ReturnURL',
       'NotifyURL',
-      'RefundReturnURL',
-      'RefundNotifyURL',
       'CustomerURL',
       'ClientBackURL',
       'EmailModify',

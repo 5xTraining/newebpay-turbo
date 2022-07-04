@@ -41,10 +41,9 @@ RSpec.describe Newebpay::Refund, type: :model do
 
   describe '#refund_info' do
     it 'return refund information' do
-      Timecop.freeze(Time.local(2022))
       refunder = Newebpay::Refund.new(order_number: 'e5orkziyyte6', amount: 100)
       expect(refunder.refund_info).to eq({ Amt: 100, CloseType: 2, IndexType: 1, MerchantOrderNo: 'e5orkziyyte6',
-                                           RespondType: 'JSON', TimeStamp: '1640966400', Version: '1.1' })
+                                           RespondType: 'JSON', TimeStamp: '1656933780', Version: '1.1' })
     end
   end
 

@@ -1,12 +1,53 @@
 AllCops:
   NewCops: enable
+  SuggestExtensions: false
+  TargetRubyVersion: 3.1.2
   Exclude:
     - 'spec/**/*'
-Layout/LineLength:
+    - 'newebpay-turbo.gemspec'
+    - 'lib/generators/newebpay/templates/**/*'
+    - vendor/bundle/**/*
+
+Style/DoubleNegation:
   Enabled: false
-Style/Documentation:
-  Enabled: false
-Metrics/MethodLength:
-  Enabled: false
+
 Metrics/AbcSize:
-  Max: 30
+  Exclude:
+    - 'lib/**/*'
+    - 'spec/**/*'
+Metrics/BlockLength:
+  Exclude:
+    - 'lib/**/*'
+    - 'spec/**/*'
+Layout/LineLength:
+  Exclude:
+    - 'lib/**/*'
+    - 'spec/**/*'
+Metrics/ClassLength:
+  Exclude:
+    - 'lib/**/*'
+    - 'spec/**/*'
+Metrics/CyclomaticComplexity:
+  Exclude:
+    - 'lib/**/*'
+    - 'spec/**/*'
+Metrics/MethodLength:
+  Exclude:
+    - 'lib/**/*'
+    - 'spec/**/*'
+Metrics/PerceivedComplexity:
+  Exclude:
+    - 'lib/**/*'
+    - 'spec/**/*'
+Naming/AccessorMethodName:
+  Exclude:
+    - 'lib/**/*'
+    - 'spec/**/*'
+Naming/PredicateName:
+  Exclude:
+    - 'lib/**/*'
+    - 'spec/**/*'
+Style/Documentation:
+  Exclude:
+    - 'lib/**/*'
+    - 'spec/**/*'

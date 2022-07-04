@@ -16,6 +16,8 @@ Newebpay::Config.options[:HashIV] = ENV.fetch('HashIV', nil)
 Newebpay::Config.options[:HashKey] = ENV.fetch('HashKey', nil)
 Newebpay::Config.options[:Version] = ENV.fetch('Version', nil)
 
+Timecop.freeze(Time.local(2022, 7, 4, 11, 23, 0))
+
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
   config.example_status_persistence_file_path = '.rspec_status'

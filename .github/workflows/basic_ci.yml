@@ -27,6 +27,7 @@ jobs:
           HashIV: ${{ secrets.HashIV }}
           HashKey: ${{ secrets.HashKey }}
           Version: ${{ secrets.Version }}
+          TZ: ${{ secrets.TZ }}
         run: bundle exec rspec
 
       - name: Run Rubocop

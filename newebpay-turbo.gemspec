@@ -6,7 +6,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include? lib
 require_relative 'lib/newebpay/version'
 
 Gem::Specification.new do |spec|
-  spec.name = 'newebpay_turbo'
+  spec.name = 'newebpay-turbo'
   spec.version = Newebpay::VERSION
   spec.authors = ['RobertChang']
   spec.email = ['fishppm0212@gmail.com']
@@ -25,5 +25,4 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
   spec.licenses = ['MIT']
   spec.homepage = 'https://github.com/5xTraining/newebpay-turbo'
-  spec.metadata['rubygems_mfa_required'] = 'true'
 end

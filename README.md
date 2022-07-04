@@ -9,6 +9,7 @@ Online payment processing for internet businesses by newebpay from Taiwan
   - [傳送參數](#傳送參數)
   - [接受參數](#接受參數)
 - [退費使用方式](#退費使用方式)
+- [請款使用方式](#請款使用方式)
 - [Bug or PR](#bug-or-pr)
 - [License](#license)
 
@@ -108,6 +109,19 @@ refunder = Newebpay::Refund.new(
 refunder.request! # 申請退款，若是帶入 cancel: true 則為取消退款
 refunder.response # 查看回傳結果
 refunder.success? # 請求是否成功
+```
+
+# 請款使用方式
+
+```ruby
+invoicer = Newebpay::Invoice.new(
+         order_number: YOUR_ORDER_NUMBER (required),
+         amount: YOUR_ORDER_AMOUNT (required),
+         cancel: false ( 預設是 false, 如果填入 true 代表要取消請款))
+
+invoicer.request! # 申請請款，若是帶入 cancel: true 則為取消請款
+invoicer.response # 查看回傳結果
+invoicer.success? # 請求是否成功
 ```
 
 # Bug or PR

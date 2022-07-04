@@ -8,6 +8,9 @@ AllCops:
     - 'lib/generators/newebpay/templates/**/*'
     - vendor/bundle/**/*
 
+Naming/FileName:
+  Enabled: false
+
 Style/DoubleNegation:
   Enabled: false
 

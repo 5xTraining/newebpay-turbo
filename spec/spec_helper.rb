@@ -3,7 +3,7 @@
 require 'rails'
 require 'active_support/core_ext'
 require 'active_support/hash_with_indifferent_access'
-require 'newebpay_turbo'
+require 'newebpay-turbo'
 require 'timecop'
 require 'webmock/rspec'
 require 'vcr'

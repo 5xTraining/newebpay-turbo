@@ -2,6 +2,7 @@
 
 module Newebpay
   module Generators
+    # Generate initailize file of newebpay config
     module Helpers
       private
 

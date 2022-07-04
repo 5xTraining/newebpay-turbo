@@ -12,7 +12,8 @@ module Newebpay
 
     def initialize(order_number: nil, amount: nil, cancel: false)
       unless order_number && amount
-        raise Newebpay::PaymentArgumentError, 'Please make sure that your arguments (order_number, amount) are filled in correctly'
+        raise Newebpay::PaymentArgumentError,
+              'Please make sure that your arguments (order_number, amount) are filled in correctly'
       end
 
       @key = Config.options[:HashKey]
@@ -26,7 +27,7 @@ module Newebpay
 
     def request!
       uri = URI('https://ccore.newebpay.com/API/CreditCard/Close')
-      res = Net::HTTP.post_form(uri, 'MerchantID_': Config.options[:MerchantID], 'PostData_': @post_data)
+      res = Net::HTTP.post_form(uri, MerchantID_: Config.options[:MerchantID], PostData_: @post_data)
       @response = JSON.parse(res.body)
     end
 

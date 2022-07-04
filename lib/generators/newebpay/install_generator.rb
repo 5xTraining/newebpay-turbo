@@ -5,6 +5,7 @@ require 'rails/generators/base'
 
 module Newebpay
   module Generators
+    # Generate initailize file of newebpay config
     class InstallGenerator < Rails::Generators::Base
       include Newebpay::Generators::Helpers
 

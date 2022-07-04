@@ -7,12 +7,13 @@ RSpec.describe Newebpay::Refund, type: :model do
     end
   end
 
-  describe "#request!" do
+  describe '#request!' do
     it 'send form data to request refund' do
       VCR.use_cassette('refund_request') do
         refunder = Newebpay::Refund.new(order_number: 'e5orkziyyte5', amount: 100)
-        expect(refunder.request!).to eq({ Message: '退款資料新增成功_模擬信用卡退款成功', Result: { Amt: 100, MerchantID: 'MS136041943', MerchantOrderNo: 'e5orkziyyte5', TradeNo: '22070316284516819' }.stringify_keys, Status: 'SUCCESS' }.stringify_keys)
-      end 
+        expect(refunder.request!).to eq({ Message: '退款資料新增成功_模擬信用卡退款成功',
+                                          Result: { Amt: 100, MerchantID: 'MS136041943', MerchantOrderNo: 'e5orkziyyte5', TradeNo: '22070316284516819' }.stringify_keys, Status: 'SUCCESS' }.stringify_keys)
+      end
     end
   end
 
@@ -23,7 +24,7 @@ RSpec.describe Newebpay::Refund, type: :model do
           refunder = Newebpay::Refund.new(order_number: 'e5orkziyyte5', amount: 100)
           refunder.request!
           expect(refunder.success?).to eq true
-        end 
+        end
       end
     end
 
@@ -42,7 +43,8 @@ RSpec.describe Newebpay::Refund, type: :model do
     it 'return refund information' do
       Timecop.freeze(Time.local(2022))
       refunder = Newebpay::Refund.new(order_number: 'e5orkziyyte6', amount: 100)
-      expect(refunder.refund_info).to eq({Amt: 100, CloseType: 2, IndexType: 1, MerchantOrderNo: 'e5orkziyyte6', RespondType: 'JSON', TimeStamp: '1640966400', Version: '1.1'})
+      expect(refunder.refund_info).to eq({ Amt: 100, CloseType: 2, IndexType: 1, MerchantOrderNo: 'e5orkziyyte6',
+                                           RespondType: 'JSON', TimeStamp: '1640966400', Version: '1.1' })
     end
   end
 
@@ -52,8 +54,9 @@ RSpec.describe Newebpay::Refund, type: :model do
         VCR.use_cassette('refund_request') do
           refunder = Newebpay::Refund.new(order_number: 'e5orkziyyte5', amount: 100)
           refunder.request!
-          expect(refunder.response).to eq({ Message: '退款資料新增成功_模擬信用卡退款成功', Result: { Amt: 100, MerchantID: 'MS136041943', MerchantOrderNo: 'e5orkziyyte5', TradeNo: '22070316284516819' }.stringify_keys, Status: 'SUCCESS' }.stringify_keys)
-        end 
+          expect(refunder.response).to eq({ Message: '退款資料新增成功_模擬信用卡退款成功',
+                                            Result: { Amt: 100, MerchantID: 'MS136041943', MerchantOrderNo: 'e5orkziyyte5', TradeNo: '22070316284516819' }.stringify_keys, Status: 'SUCCESS' }.stringify_keys)
+        end
       end
     end
 

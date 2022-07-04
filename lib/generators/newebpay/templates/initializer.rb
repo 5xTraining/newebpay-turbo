@@ -37,7 +37,7 @@ Newebpay.configure do |config|
 
   # The URL ending payment information by asynchronous, method: :post
   # config.notifyURL = ''
-  
+
   # The URL of the numbering system, method: :post
   # config.customerURL = ''
 
@@ -65,7 +65,7 @@ Newebpay.configure do |config|
   # Credit card pay in installments, only accept varchar, 1 means open all options, 0 means not enabled, example: '3,6,12' means open 3 & 6 & 12 installments etc.
   # config.instFlag = '0'
 
-  # Credit card bonus, 0 means not enabled, 1 means enabled 
+  # Credit card bonus, 0 means not enabled, 1 means enabled
   # config.creditRed = 0
 
   # UNIONPAY, 0 means not enabled, 1 means enabled
@@ -86,7 +86,7 @@ Newebpay.configure do |config|
   # Supermarket barcode payment, 0 means not enabled, 1 means enabled, maximum amount is 40,000 NTD, minimum amount is 20 NTD
   # config.bARCODE = 0
 
-  # Esum Wallet, 0 means not enabled, 1 means enabled 
+  # Esum Wallet, 0 means not enabled, 1 means enabled
   # config.eSUNWALLET = 0
 
   # Taiwan pay, 0 means not enabled, 1 means enabled

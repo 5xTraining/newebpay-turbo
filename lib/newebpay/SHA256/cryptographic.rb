@@ -14,7 +14,7 @@ module Newebpay
       end
 
       private
-      
+
       def encode(data)
         key = Config.options['HashKey']
         iv = Config.options['HashIV']

@@ -6,9 +6,9 @@ require_relative './AES/cryptographic'
 
 module Newebpay
   class Response
-    attr_reader :status, :message, :result, :order_number, :trade_number, :ip, :card_number_first_six_code, :card_number_last_four_code,
-                :escrow_bank, :auth_bank, :pay_way, :inst, :inst_first_price, :inst_each_price, :atm_pay_bank_code, :atm_payer_account_last_five_code,
-                :paid_at
+    attr_reader :status, :message, :result, :order_number, :trade_number, :ip, :card_number_first_six_code,
+                :card_number_last_four_code, :escrow_bank, :auth_bank, :pay_way, :inst, :inst_first_price,
+                :inst_each_price, :atm_pay_bank_code, :atm_payer_account_last_five_code, :paid_at
 
     def initialize(data)
       response = JSON.parse(AES::Cryptographic.new(data['TradeInfo']).decrypt)
@@ -33,7 +33,7 @@ module Newebpay
     end
 
     def success?
-      status === 'SUCCESS'
+      status == 'SUCCESS'
     end
   end
 end

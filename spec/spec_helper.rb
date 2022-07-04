@@ -1,24 +1,24 @@
 # frozen_string_literal: true
 
 require 'rails'
-require "active_support/core_ext"
+require 'active_support/core_ext'
 require 'active_support/hash_with_indifferent_access'
-require "newebpay-turbo"
+require 'newebpay_turbo'
 require 'timecop'
 require 'webmock/rspec'
 require 'vcr'
-require "dotenv"
+require 'dotenv'
 
-Dotenv.overload ".env.test" 
+Dotenv.overload '.env.test'
 
-Newebpay::Config.options[:MerchantID] = ENV['MerchantID']
-Newebpay::Config.options[:HashIV] = ENV['HashIV']
-Newebpay::Config.options[:HashKey] = ENV['HashKey']
-Newebpay::Config.options[:Version] = ENV['Version']
+Newebpay::Config.options[:MerchantID] = ENV.fetch('MerchantID', nil)
+Newebpay::Config.options[:HashIV] = ENV.fetch('HashIV', nil)
+Newebpay::Config.options[:HashKey] = ENV.fetch('HashKey', nil)
+Newebpay::Config.options[:Version] = ENV.fetch('Version', nil)
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
-  config.example_status_persistence_file_path = ".rspec_status"
+  config.example_status_persistence_file_path = '.rspec_status'
 
   # Disable RSpec exposing methods globally on `Module` and `main`
   config.disable_monkey_patching!
@@ -29,6 +29,6 @@ RSpec.configure do |config|
 end
 
 VCR.configure do |config|
-  config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
+  config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
   config.hook_into :webmock
 end

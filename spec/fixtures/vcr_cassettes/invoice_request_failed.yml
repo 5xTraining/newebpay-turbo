@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://ccore.newebpay.com/API/CreditCard/Close
+    body:
+      encoding: US-ASCII
+      string: MerchantID_=MS136041943&PostData_=836710c9527687abd71b1530187e27f3d7ad1787fd395671fffc3c728c6a85602f0d72ae65b280a7261b2eff88928a1b5b67f951a8297dd88c0c0aa7895818eacbad9c32d1c64c5d09e2589ebfd0ac1392295941cc4050e9b9f87527c17ed5cab3a898ccd7e37080c5c5371cd99100ed3469ced81c147974535f3e8aff06841a
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - ccore.newebpay.com
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 04 Jul 2022 04:12:20 GMT
+      Server:
+      - Apache
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains ; preload
+      Content-Security-Policy:
+      - 'default-src ''self'' https://www.google-analytics.com https://www.googletagmanager.com/;
+        script-src ''self'' ''unsafe-eval'' ''unsafe-inline'' https://h.online-metrix.net
+        https://pay.google.com https://www.googletagmanager.com/ https://www.google-analytics.com;
+        style-src ''self'' ''unsafe-inline'' https://use.fontawesome.com; img-src
+        ''self'' https: data:; font-src ''self'' https://use.fontawesome.com  data:;
+        object-src ''none''; frame-src ''self'' https://h.online-metrix.net https://pay.google.com
+        data:;'
+      Content-Length:
+      - '242'
+      Content-Type:
+      - text/html; charset=UTF-8
+      Set-Cookie:
+      - incap_ses_930_2713118=1e2ZCUm1ySVV8/s/yAboDKVowmIAAAAA7leSBvPkpyTObzEjEbBgMw==;
+        path=/; Domain=.newebpay.com; Secure; SameSite=None
+      - visid_incap_2713118=uYaAbUkZRv6e6KKbWBC8ZSZowmIAAAAAQUIPAAAAAADhtoWfV+hOa/vQtSmYDiBN;
+        expires=Mon, 03 Jul 2023 15:19:50 GMT; HttpOnly; path=/; Domain=.newebpay.com;
+        Secure; SameSite=None
+      X-Cdn:
+      - Imperva
+      X-Iinfo:
+      - 13-96382415-96382416 NNNN CT(1 6 0) RT(1656907940936 14) q(0 0 0 0) r(3 3)
+        U6
+    body:
+      encoding: UTF-8
+      string: '{"Status":"TRA10027","Message":"\u6b64\u8a02\u55ae\u5df2\u7533\u8acb\u904e\u8acb\u6b3e\uff0c\u4e0d\u53ef\u91cd\u8986\u8acb\u6b3e","Result":{"MerchantID":"MS136041943","Amt":1234,"MerchantOrderNo":"xgruotokea5y","TradeNo":"22070412073408373"}}'
+  recorded_at: Mon, 04 Jul 2022 11:23:00 GMT
+recorded_with: VCR 6.1.0

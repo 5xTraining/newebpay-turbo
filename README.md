@@ -21,7 +21,7 @@ Online payment processing for internet businesses by newebpay from Taiwan
 
 目前這個 Gem 只在 Rails 專案內支援，故安裝方式請放在 `Gemfile` 內
 
-`gem 'newebpay-turbo', '~> 0.6.2'`
+`gem 'newebpay-turbo', '~> 0.7.0'`
 
 `bundle install`
 
@@ -36,12 +36,12 @@ Online payment processing for internet businesses by newebpay from Taiwan
 下列為必填參數，不然會造成錯誤
 
 ```
-config.merchantID = nil # 建議使用環境變數帶入
-config.hashKey    = nil # 建議使用環境變數帶入
-config.hashIV     = nil # 建議使用環境變數帶入
-config.respondType = 'JSON'
-config.version = '2.0'
-config.loginType = 0
+config.merchant_id  = nil # 建議使用環境變數帶入
+config.hash_key     = nil # 建議使用環境變數帶入
+config.hash_iv      = nil # 建議使用環境變數帶入
+config.respond_type = 'JSON'
+config.version      = '2.0'
+config.login_type   = 0
 ...
 ```
 

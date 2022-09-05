@@ -11,10 +11,12 @@ require 'dotenv'
 
 Dotenv.overload '.env.test'
 
-Newebpay::Config.options[:MerchantID] = ENV.fetch('MerchantID', nil)
-Newebpay::Config.options[:HashIV] = ENV.fetch('HashIV', nil)
-Newebpay::Config.options[:HashKey] = ENV.fetch('HashKey', nil)
-Newebpay::Config.options[:Version] = ENV.fetch('Version', nil)
+Newebpay.configure do |configure|
+  configure.merchant_id = ENV.fetch('MerchantID', nil)
+  configure.hash_iv = ENV.fetch('HashIV', nil)
+  configure.hash_key = ENV.fetch('HashKey', nil)
+  configure.version = ENV.fetch('Version', nil)
+end
 
 Timecop.freeze(Time.local(2022, 7, 4, 11, 23, 0))
 
